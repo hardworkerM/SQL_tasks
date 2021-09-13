@@ -1,5 +1,6 @@
 # SQL_tasks
 Задачи на SQL-запросы для анализа продаж:
+
 У меня есть SQL база с таблицами:
 1) Users(userId, age)
 2) Purchases (purchaseId, userId, itemId, date)
