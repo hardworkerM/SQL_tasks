@@ -3,27 +3,6 @@ from connection import connect_to_db
 conn, curr = connect_to_db()
 
 
-# def top_3(curr, year):
-#     curr.execute(f"""
-#                     SELECT a.item, a.summa * 100 / (SELECT SUM(i.price)
-#                                     FROM Items i
-#                                     JOIN Purchases p
-#                                       ON i.itemId = p.itemId)
-#
-#
-#                     FROM (
-#                             SELECT SUM(i.price) as summa, i.itemId as item
-#                             FROM Items i
-#                             JOIN Purchases p
-#                             ON   i.itemId = p.itemId
-#                             WHERE strftime('%Y', p.date) = '{year}'
-#                             GROUP BY i.itemId
-#                             ) AS a
-#                     ORDER BY a.summa DESC
-#                     LIMIT 3;
-#             """)
-#     res = curr.fetchall()
-#     return res
 
 def top_3(curr, year):
     curr.execute(f"""
