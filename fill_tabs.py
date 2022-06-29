@@ -6,7 +6,7 @@ def create_tabs():
     conn, curr = connect_to_db()
     curr.execute('CREATE TABLE IF NOT EXISTS Users(userId int, age int)')
     curr.execute('CREATE TABLE IF NOT EXISTS Purchases (purchaseId int, userId int, itemId int, date date)')
-    curr.execute('CREATE TABLE IF NOT EXISTS  Items (itemId int, price int)')
+    curr.execute('CREATE TABLE IF NOT EXISTS  Items (itemId int, price DECIMAL(8, 2))')
     fill_tabs(curr)
     conn.commit()
 
@@ -54,7 +54,7 @@ def insert_into(curr, tab_name, element):
 
 def show_result(curr):
     curr.execute("""SELECT *
-                    FROM Users
+                    FROM Purchases
                     LIMIT 10
                 """)
     nb = curr.fetchall()
