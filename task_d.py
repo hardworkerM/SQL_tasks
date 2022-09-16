@@ -2,7 +2,7 @@ from connection import connect_to_db
 
 conn, curr = connect_to_db()
 
-
+# Расчёты пока неверны
 
 def top_3(curr, year):
     curr.execute(f"""
